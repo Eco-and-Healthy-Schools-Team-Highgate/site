@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco & Healthy Schools Team | Highgate</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; margin: 0; background-color: #f4fbf4; color: #333; }
+        header { background-color: #2e7d32; color: white; padding: 2rem; text-align: center; }
+        
+        /* NAVIGATION STYLES */
+        nav { background: #1b5e20; padding: 10px; text-align: center; position: sticky; top: 0; z-index: 100; }
+        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; cursor: pointer; }
+        nav a:hover { text-decoration: underline; }
+        
+        .container { max-width: 1000px; margin: 20px auto; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); min-height: 400px; }
+        
+        /* PAGE CONTENT VISIBILITY */
+        .page-content { display: none; animation: fadeIn 0.5s; }
+        .page-content.active { display: block; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* CARD STYLES */
+        .card-container { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 20px; }
+        .card { flex: 1; min-width: 280px; max-width: 400px; text-decoration: none; color: inherit; background-color: #e8f5e9; border: 3px solid #4caf50; border-radius: 12px; padding: 20px; text-align: center; transition: 0.3s; }
+        .card.active:hover { transform: scale(1.05); box-shadow: 0 10px 20px rgba(0,0,0,0.15); background-color: #c8e6c9; }
+        .card.placeholder { background-color: #f5f5f5; border-color: #bdbdbd; border-style: dashed; opacity: 0.8; }
+        .icon { font-size: 50px; margin-bottom: 10px; }
+        .btn-play { display: inline-block; background-color: #2e7d32; color: white; padding: 10px 20px; border-radius: 25px; margin-top: 15px; font-weight: bold; }
+
+        footer { text-align: center; padding: 20px; color: #666; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Eco and Healthy Schools Team at Highgate</h1>
+    <p>Highgate Eco Projects</p>
+</header>
+
+<nav>
+    <a onclick="showSection('about')">About</a>
+    <a onclick="showSection('game-section')">Games</a>
+</nav>
+
+<div class="container">
+    <!-- SECTION: ABOUT -->
+    <div id="about" class="page-content active">
+        <h2>Welcome</h2>
+        <p>This website features projects created for the Eco and Healthy Schools Team. Our goal is to focuses on Clean environment.</p>
+    </div>
+
+    <!-- SECTION: GAMES -->
+    <div id="game-section" class="page-content">
+        <h2 style="text-align: center;">Eco-Games</h2>
+        <div class="card-container">
+            <!-- Game Card -->
+            <a href="https://eco-and-healthy-schools-team-highgate.github.io/Trash-Pick-Up-Game/Eco-Trash-Pick-Up.html" 
+               target="_blank" 
+               class="card active">
+                <div class="icon">♻️</div>
+                <h3>Trash Pick-Up Game</h3>
+                <p>Click here to open the game in a new tab and start cleaning!</p>
+                <div class="btn-play">Play Now</div>
+            </a>
+
+            <!-- Placeholder Card -->
+            <div class="card placeholder">
+                <div class="icon"></div>
+                <h3>More Coming Soon</h3>
+                <p>New projects are currently being coded. Check back later!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2026 Eco and Healthy Schools Team - Highgate. since 2026. All Rights Reserved. This Code Is Hosted For Display and Educational Purposes only. No Permission Is Granted to Duplicate, Copy, Or Modify This Code</p>
+</footer>
+
+<script>
+    function showSection(sectionId) {
+        // Find all sections and hide them
+        const sections = document.querySelectorAll('.page-content');
+        sections.forEach(section => {
+            section.classList.remove('active');
+        });
+
+        // Show the specific section that was clicked
+        const activeSection = document.getElementById(sectionId);
+        activeSection.classList.add('active');
+    }
+</script>
+
+</body>
+</html>
